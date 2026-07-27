@@ -26,7 +26,7 @@ img{max-width:100%}
 .wrap{max-width:var(--maxw); margin:0 auto; padding:0 clamp(20px,5vw,40px);}
 
 /* hero */
-.hero{padding:clamp(56px,9vh,104px) 0 clamp(28px,5vh,50px); position:relative; text-align:center;}
+.hero{padding:clamp(56px,9vh,104px) 0 clamp(14px,2vh,24px); position:relative; text-align:center;}
 .hero::before{content:""; position:absolute; inset:0 0 auto 0; height:380px; z-index:-1; pointer-events:none;
   background:radial-gradient(46% 100% at 30% 0%, rgba(145,130,242,.08), transparent 72%);}
 .mark{font-family:var(--mono); font-weight:500; color:var(--head); letter-spacing:-.01em; line-height:1;
@@ -37,7 +37,7 @@ img{max-width:100%}
 .intro .story{font-family:var(--mono); font-weight:500; letter-spacing:.02em; color:var(--accent);}
 
 /* examples (centered showcase) */
-.examples{padding:clamp(22px,4vh,44px) 0 clamp(42px,7vh,78px);}
+.examples{padding:clamp(12px,2vh,22px) 0 clamp(42px,7vh,78px);}
 .exlabel{font-family:var(--mono); font-size:12.5px; font-weight:500; letter-spacing:.08em; color:var(--muted); margin:0 0 16px; text-align:center;}
 .tabsbar{position:sticky; top:0; z-index:20; background:color-mix(in srgb,var(--bg) 90%, transparent);
   backdrop-filter:blur(10px); border-bottom:1px solid var(--border); margin-bottom:34px;}
@@ -86,9 +86,11 @@ img{max-width:100%}
 .dot:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
 
 /* hero film */
-.herofilm{max-width:720px; margin:38px auto 0;}
+.herofilm{max-width:720px; margin:clamp(38px,6vh,64px) auto 0;}
 .filmcap{font-family:var(--mono); font-weight:500; font-size:13.5px; letter-spacing:.03em; color:var(--accent);
-  margin:14px auto 0; max-width:46ch; text-align:center;}
+  margin:20px auto 0; max-width:58ch; text-align:center; text-wrap:balance;}
+/* follows .intro so it wins the shared-specificity tie on margin-top */
+.intro--after{margin-top:clamp(38px,6vh,60px);}
 
 /* prose */
 .prose{padding:clamp(36px,6vh,76px) 0; border-top:1px solid var(--border); position:relative; overflow:hidden;}
@@ -99,12 +101,15 @@ img{max-width:100%}
 
 /* status + films */
 .films{padding:clamp(30px,5vh,64px) 0 clamp(24px,4vh,52px); border-top:1px solid var(--border);}
+.statushead{font-family:var(--mono); font-weight:500; font-size:clamp(22px,3.4vw,30px); letter-spacing:0;
+  line-height:1.2; color:var(--head); margin:0 0 clamp(20px,3vh,30px); text-align:center; text-wrap:balance;}
 .status__col{max-width:54ch; margin:0 auto clamp(26px,4vh,40px); display:flex; flex-direction:column; gap:18px;}
 .status__col p{margin:0; font-size:clamp(16.5px,1.8vw,19px); line-height:1.66; color:var(--text);}
 .films__col{max-width:740px; margin:0 auto; display:flex; flex-direction:column; gap:clamp(16px,3vh,28px);}
 .films__col .filmcap{margin-top:-4px;}
+/* no border: the clips are pure black at their edges, so any border reads as a bright outline */
 .film{position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:10px;
-  border:1px solid var(--border); background:var(--bg);
+  background:#000;
   opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease;}
 .film.in{opacity:1; transform:none;}
 .film video{display:block; width:100%; height:100%; object-fit:cover;}
@@ -130,7 +135,7 @@ img{max-width:100%}
     <div class="film"><video src="clip-2.mp4" poster="poster-2.jpg" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Orda gameplay: the Queen moves forward, illuminating distant hexes"></video></div>
     <p class="filmcap">I moved my Queen forward, illuminating distant hexes</p>
   </div>
-  <div class="intro">
+  <div class="intro intro--after">
     <p>In multiplayer, each game forms a <span class="story">STORY</span> emerging from the interactions between game elements:</p>
   </div>
 </div></header>
@@ -151,7 +156,7 @@ img{max-width:100%}
 
 <section class="films" id="status">
   <div class="wrap">
-    <p class="exlabel">What state is the game in now</p>
+    <h2 class="statushead">What state is the game in now</h2>
     <div class="status__col">
       <p>Multiplayer is finished &#8212; all rules and intended features are implemented, and are currently being tested. You can play with your friends online. Placeholder graphics by me.</p>
       <p>Single player and 3D mode are being implemented.</p>
