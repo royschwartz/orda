@@ -107,6 +107,15 @@ img{max-width:100%}
 .status__col p{margin:0; font-size:clamp(16.5px,1.8vw,19px); line-height:1.66; color:var(--text);}
 .films__col{max-width:740px; margin:0 auto; display:flex; flex-direction:column; gap:clamp(16px,3vh,28px);}
 .films__col .filmcap{margin-top:-4px;}
+.testbuild{align-self:center; display:inline-flex; flex-direction:column; align-items:center; gap:2px;
+  min-width:min(100%,290px); margin:-4px auto 0; padding:12px 20px; border:1px solid var(--border-2); border-radius:9px;
+  background:var(--surface); color:var(--head); text-decoration:none;
+  transition:color .18s, border-color .18s, background .18s, transform .18s;}
+.testbuild:hover{border-color:var(--accent); background:var(--surface-2); transform:translateY(-1px);}
+.testbuild:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+.testbuild__title{font-family:var(--mono); font-size:13.5px; font-weight:500; letter-spacing:.02em;}
+.testbuild__meta{font-family:var(--mono); font-size:11.5px; color:var(--muted);}
+.testbuild:hover .testbuild__meta{color:var(--text);}
 /* no border: the clips are pure black at their edges, so any border reads as a bright outline */
 .film{position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:10px;
   background:#000;
@@ -170,6 +179,10 @@ img{max-width:100%}
     <div class="films__col">
       <div class="film"><video src="clip-1.mp4" poster="poster-1.jpg" muted loop playsinline preload="metadata" disablepictureinpicture aria-label="Orda 3D mode: a flyover of the board"></video></div>
       <p class="filmcap">3D mode</p>
+      <a class="testbuild" href="https://github.com/royschwartz/orda/releases/latest/download/Orda-3D-Test-Build-macOS-Windows.zip" aria-label="Download the Orda 3D test build for macOS and Windows as one ZIP">
+        <span class="testbuild__title">Download the 3D test build</span>
+        <span class="testbuild__meta">macOS + Windows &#183; ZIP</span>
+      </a>
     </div>
   </div>
 </section>
