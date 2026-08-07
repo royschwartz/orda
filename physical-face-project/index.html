@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Orda physical face art direction and interactive face study.">
+  <title>Physical Face Project — Orda</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #22252b;
+      --muted: #666b74;
+      --paper: #f2f0ea;
+      --surface: #fff;
+      --line: #d9d6ce;
+      --accent: #4f78d8;
+      --accent-dark: #2f4e97;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: clamp(17px, 1.8vw, 20px);
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+
+    .site-header {
+      background: #111318;
+      color: #f7f7f4;
+    }
+
+    .site-header__inner,
+    main,
+    .site-footer__inner {
+      width: min(100% - 36px, 920px);
+      margin-inline: auto;
+    }
+
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+
+    .brand {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 16px;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+
+    .back-link {
+      color: #b9c8eb;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible { color: #fff; }
+
+    main { padding-block: clamp(46px, 8vw, 88px); }
+
+    article {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 22px 70px rgb(28 31 38 / 8%);
+    }
+
+    .hero,
+    .copy-section,
+    .viewer-section {
+      padding-inline: clamp(24px, 6vw, 72px);
+    }
+
+    .hero { padding-block: clamp(48px, 9vw, 88px) clamp(38px, 7vw, 64px); }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent-dark);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
+    h1 { max-width: 760px; font-size: clamp(42px, 8vw, 76px); font-weight: 600; }
+
+    h2 { margin-bottom: 28px; font-size: clamp(27px, 4vw, 38px); font-weight: 600; }
+
+    p { margin: 0 0 1.35em; }
+    p:last-child { margin-bottom: 0; }
+
+    .copy-section,
+    .viewer-section {
+      padding-block: clamp(42px, 7vw, 70px);
+      border-top: 1px solid var(--line);
+    }
+
+    .viewer-section {
+      padding-inline: clamp(12px, 3vw, 28px);
+      background: #eef1f8;
+    }
+
+    .viewer-section h2,
+    .viewer-section figcaption {
+      margin-inline: clamp(12px, 3vw, 44px);
+    }
+
+    .viewer {
+      margin: 0;
+    }
+
+    .viewer iframe {
+      display: block;
+      width: 100%;
+      height: 1280px;
+      border: 1px solid #d9deea;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .viewer figcaption {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .expression-list {
+      margin: 1.5em 0 2em;
+      padding-left: 1.2em;
+    }
+
+    .expression-list li { margin: .28em 0; }
+
+    details {
+      margin-block: 2em;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f8f8f6;
+    }
+
+    summary {
+      padding: 18px 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    summary::marker { color: var(--accent); }
+
+    .special-faces {
+      margin: 0;
+      padding: 0 24px 22px 42px;
+    }
+
+    .special-faces li { margin: .85em 0; }
+
+    .site-footer {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .site-footer__inner { padding-block: 28px 42px; }
+
+    @media (max-width: 620px) {
+      .site-header__inner,
+      main,
+      .site-footer__inner { width: min(100% - 20px, 920px); }
+
+      article { border-radius: 12px; }
+      .hero,
+      .copy-section { padding-inline: 22px; }
+      .viewer-section { padding-inline: 8px; }
+      .viewer iframe { height: 1540px; border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../">ORDA</a>
+      <a class="back-link" href="../">Back to overview</a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="hero">
+        <p class="eyebrow">Art direction brief</p>
+        <h1>Physical Face Project</h1>
+      </header>
+
+      <section class="copy-section" aria-labelledby="context-heading">
+        <h2 id="context-heading">The Context</h2>
+
+        <p>Of the 24 units, 18 have faces and they will be called Faces. The Elders don’t have faces.</p>
+
+        <p>Each cube may have a few faces, which I’m learning is just front and back. That’s a little confusing maybe but we’ll need to see how the game actually plays. When a unit interacts with another hex, like move towards it, the cube rotates in that direction, orienting its faces there. With a face on the front and the back, a face should always be visible with a proper camera view. The top and bottom of the cube show the unit symbol, and other sides of the cube are blank or sometimes show symbolic images.</p>
+
+        <p>The cube should be propelled with the mouse across the board in a very tactile way. It bounces on the hexes (which are themselves 3d scanned) almost in slow motion, hitting the board with echoing thuds.</p>
+
+        <p>Vines grow up the sides of the cube giving an indicator of how healthy the Face is, and bristle as the cube moves.</p>
+      </section>
+
+      <section class="viewer-section" aria-labelledby="study-heading">
+        <h2 id="study-heading">Interactive face study</h2>
+        <figure class="viewer">
+          <iframe src="face-visualizer.html" title="Interactive Orda cube and physical face visualizer" loading="lazy" allow="fullscreen"></iframe>
+          <figcaption>Rotate and pan the cube, switch expressions, and adjust its material and lighting.</figcaption>
+        </figure>
+      </section>
+
+      <section class="copy-section" aria-labelledby="faces-heading">
+        <h2 id="faces-heading">The Faces</h2>
+
+        <p>The plan is the Artist will provide a number of expressions per unit</p>
+
+        <ul class="expression-list">
+          <li>default</li>
+          <li>excited/angry</li>
+          <li>Hurt</li>
+          <li>Sleeping (eyes closed, could be done in post)</li>
+          <li>Dying (this is like devolution and could also be used for birth, run in reverse)</li>
+        </ul>
+
+        <details>
+          <summary>special faces, there may be more eg (a click here shows and hides the text below)</summary>
+          <ul class="special-faces">
+            <li><em>Ram face points down, showing top of head as its special attack is made</em></li>
+            <li><em>spitter - puffs and spite out a projectile</em></li>
+            <li><em>scorpion - opens mouth poison gas comes out</em></li>
+            <li><em>moth - fog comes out of mouth</em></li>
+            <li><em>the psychic (closes eyes when goes into trance)</em></li>
+            <li><em>Mother (smiles beatifically)</em></li>
+            <li><em>the tree (opens mouth super wide and units and items fly out of it)</em></li>
+            <li><em>siren (opens mouth to sing)</em></li>
+          </ul>
+        </details>
+
+        <p>In the end if there are 18 faces, each should have 5 expressions + there may be specials for each. Separate casts may be unnecessary, especially for things like sleep (we just have eyelids come down. I started getting good results with cheap Claytoon — at least it looked good before I scanned it, there’s a real learning curve there — so there may be something there.</p>
+
+        <p>After the expressions are delivered, I’ll get them animated separately in Blender.</p>
+
+        <p>Faces change based on programmatic rules. If the unit is locked in combat the face will usually be excited, when dealt blow hurt face may flash. We’ll animate seamlessly between these.</p>
+
+        <p>When a new kind of action is committed, sometimes a new face will be required, eg if the unit using rockets, the spitter expression will show. This may be preferable to doing an individual spitting animation for every face. When concealed units use rockets, the spitting face will emerge, otherwise concealed units will show now faces.</p>
+
+        <p>I’m not sure exactly what the faces should be like. The principles I have in mind right now are they should evoke a sense of the ancient, be readable from afar, have a simplicity to them. The faces should work with shadows and perhaps have some realistic elements like cheekbones that highlight different aspects of the face when they’re turning.</p>
+
+        <p>Colorwise we should stick to one or two colors, main colors. Perhaps there’s some subtle stuff there should become visible up close (ok as long as it doesn’t readability) but not sure what the default face color should be. Flesh tones or something more rocklike?</p>
+      </section>
+
+      <section class="copy-section" aria-labelledby="artist-heading">
+        <h2 id="artist-heading">Artist Expectations</h2>
+
+        <p>The first period of working should be collaborative - we work together (over call or text, I have no preference) to find the right material and work flow, also decide the style for the faces (all faces should be somewhat similar in this respect). Once this is set, the artist can iterate and complete the project with less involvement from me.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">Orda · Physical Face Project</div>
+  </footer>
+</body>
+</html>
